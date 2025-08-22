@@ -172,11 +172,17 @@ Devuelve ÚNICAMENTE uno de los siguientes formatos JSON (sin explicación):
 
   try {
     console.log('Enviando instrucción a OpenRouter:', instruccion);
+    const apiKey = window.OPENROUTER_API_KEY || (window.CONFIG && window.CONFIG.OPENROUTER_API_KEY);
+    if (!apiKey) {
+      console.error('No API key found: define window.OPENROUTER_API_KEY or create config.js with OPENROUTER_API_KEY');
+      return { error: true, reason: 'no_api_key' };
+    }
+
     const respuesta = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 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`
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         model: 'amazon/nova-lite-v1',

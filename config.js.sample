@@ -1,0 +1,5 @@
+// Copia este archivo a `config.js` en el mismo directorio y reemplaza la clave por la tuya.
+// Este archivo NO debe subirse al repositorio.
+window.CONFIG = {
+  OPENROUTER_API_KEY: 'sk-REPLACE_WITH_YOUR_KEY'
+};
