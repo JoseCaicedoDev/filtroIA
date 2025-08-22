@@ -176,7 +176,7 @@ Devuelve ÚNICAMENTE uno de los siguientes formatos JSON (sin explicación):
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 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`
+        'Authorization': `Bearer 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`
       },
       body: JSON.stringify({
         model: 'amazon/nova-lite-v1',
